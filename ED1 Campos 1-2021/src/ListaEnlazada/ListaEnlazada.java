@@ -13,6 +13,10 @@ public class ListaEnlazada {
         inicio = null;
         cant = 0;
     }
+    
+    public boolean vacia(){
+        return cant == 0;
+    }
 
     public void insertar(int num) {
         Nodo nuevo = new Nodo();
@@ -44,6 +48,9 @@ public class ListaEnlazada {
     }
     
     public void eliminar(int num){
+        if(vacia()){
+            return;
+        }
         Nodo aux = inicio;
         Nodo ant = null;
         while(aux != null && aux.getDato() != num){
