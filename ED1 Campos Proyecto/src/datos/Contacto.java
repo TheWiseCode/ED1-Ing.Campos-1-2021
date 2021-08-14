@@ -126,6 +126,17 @@ public class Contacto implements Serializable{
                 return "otros";
         }
     }
+    
+    @Override
+    public String toString(){
+        String name = getNombre();
+        String last = getApellido();
+        int num = getNumero();
+        String telf = getTipoTelf();
+        String grupo = getGrupo();
+        return "Nombre: " + name + ",Apellido: " + last
+                + ",Numero: " + num + ",Tipo: " + telf + ",Grupo: " + grupo;
+    }
 
     public static void main(String[] args) {
         Contacto a = new Contacto("Pedro", "Velasquez", 76324624, true, "Amigos");
